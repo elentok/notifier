@@ -25,20 +25,14 @@
             %li
               = link_to 'Sign up', new_user_registration_path
 
-
   .container-fluid
     .row-fluid
       .span3
         .well.nav-container.thin-well
           %ul.nav.nav-list
             %li.nav-header Sidebar
-            %li
-              = link_to '#' do
-                %i.icon-inbox
-                Inbox
-              = link_to '#' do
-                %i.icon-envelope
-                New Message
+            = nav_link_to messages_path, "Inbox", "inbox"
+            = nav_link_to new_message_path, "New Message", "envelope"
       .span9
         - unless notice.nil?
           #notice.alert.alert-info= notice
