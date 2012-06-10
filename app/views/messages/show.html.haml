@@ -1,0 +1,12 @@
+%p
+  %b Sender:
+  = @message.sender
+%p
+  %b Title:
+  = @message.title
+%p
+  %b Body:
+  = @message.body
+
+= link_to t(:edit), edit_message_path(@message), class: 'btn'
+= link_to t(:back), messages_path, class: 'btn'

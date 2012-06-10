@@ -10,7 +10,7 @@
   .navbar
     .navbar-inner
       .container
-        %a.brand{href: root_url} App
+        %a.brand{href: root_url} Notifier
         %ul.nav.pull-right
           - if user_signed_in?
             %li
@@ -29,13 +29,16 @@
   .container-fluid
     .row-fluid
       .span3
-        .well.nav-container
+        .well.nav-container.thin-well
           %ul.nav.nav-list
-            %li.nav-header Section1
+            %li.nav-header Sidebar
             %li
-              %a{href: '#'}
-                %i.icon-plus
-                Add something
+              = link_to '#' do
+                %i.icon-inbox
+                Inbox
+              = link_to '#' do
+                %i.icon-envelope
+                New Message
       .span9
         - unless notice.nil?
           #notice.alert.alert-info= notice
