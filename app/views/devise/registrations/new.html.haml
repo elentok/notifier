@@ -1,0 +1,18 @@
+.page-header
+  %h2 Sign up
+
+= simple_form_for(resource, 
+                  :as => resource_name, 
+                  :url => registration_path(resource_name),
+                  :html => { :class => 'form-horizontal' }) do |f|
+
+  = f.error_notification
+
+  .form-fields
+    = f.input :fullname, :required => true, :autofocus => true
+    = f.input :username, :required => true
+    = f.input :password, :required => true
+    = f.input :password_confirmation, :required => true
+
+  .form-actions
+    = f.button :submit, "Sign up", class: 'btn-primary'

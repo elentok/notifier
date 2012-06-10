@@ -3,17 +3,20 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :authentication_keys => [:username]
+         :rememberable, :trackable, :validatable
+
+  #:recoverable, 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :password, :password_confirmation, :remember_me
+  attr_accessible :fullname, :username, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
-  # fake the email
-  #def email; "fake@fake.com"; end
-  #def email_changed?; false; end
+  # disable the email field
   def email_required?
+    false
+  end
+
+  def email_changed?
     false
   end
 end
