@@ -1,25 +1,24 @@
 .page-header
   %h1 Messages
 
-%table.table.table-striped.table-bordered
-  %tr
-    %th= t 'activerecord.attributes.message.sender'
-    %th= t 'activerecord.attributes.message.title'
-    %th= t 'activerecord.attributes.message.body'
-    %th
-
+%ul.messages
   - @messages.each do |message|
-    %tr
-      %td= message.sender
-      %td= message.title
-      %td= message.body
-      %td
-        = link_to t(:show), message, class: 'btn btn-mini'
-        = link_to t(:edit), edit_message_path(message),
-          class: 'btn btn-mini'
-        = link_to t(:destroy), message, 
+    %li
+      %i.icon-envelope
+      .message-data
+        .from= message.sender
+        .title
+          = link_to message.title, message
+        .body= message.body
+      .actions
+        = link_to edit_message_path(message),
+          class: 'btn btn-mini btn-success' do
+          %i.icon-pencil.icon-white
+
+        = link_to message, 
           :confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
-          class: 'btn btn-mini btn-danger'
+          class: 'btn btn-mini btn-danger' do
+          %i.icon-trash.icon-white
 
 %br
 

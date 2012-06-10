@@ -4,7 +4,7 @@ class Message < ActiveRecord::Base
     class_name: 'User', 
     join_table: 'messages_recipients'
 
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :sender_id, :recipient_ids
 
   def self.to_user(user_id)
     Message.includes(:recipients).where(users: { id: user_id })

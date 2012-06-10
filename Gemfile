@@ -19,6 +19,7 @@ gem 'rvm-capistrano'
 gem 'capistrano_colors'
 
 gem 'devise'
+gem 'chosen-rails'
 
 # optional gems:
 #gem 'simple_enum'

@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def email_changed?
     false
   end
+
+  def to_s
+    fullname
+  end
 end

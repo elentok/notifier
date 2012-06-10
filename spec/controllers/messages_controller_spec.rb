@@ -45,6 +45,11 @@ describe MessagesController do
       get :new, {}, valid_session
       assigns(:message).should be_a_new(Message)
     end
+
+    it "assigns the current user id as @message.sender_id" do
+      get :new, {}, valid_session
+      assigns(:message).sender.should == user
+    end
   end
 
   describe "GET edit" do

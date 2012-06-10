@@ -1,6 +1,9 @@
 %p
-  %b Sender:
+  %b From:
   = @message.sender
+%p
+  %b To:
+  = @message.recipients.join(', ')
 %p
   %b Title:
   = @message.title
