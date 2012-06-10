@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   # fake the email
-  def email; "fake@fake.com"; end
-  def email_changed?; false; end
+  #def email; "fake@fake.com"; end
+  #def email_changed?; false; end
+  def email_required?
+    false
+  end
 end
