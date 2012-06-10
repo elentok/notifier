@@ -7,7 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem 'haml-rails'
+gem 'haml-bootstrap-rails'
 gem 'bootstrap-sass'
 gem 'compass-rails'
 
@@ -17,6 +17,8 @@ gem 'draper'
 gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'capistrano_colors'
+
+gem 'devise'
 
 # optional gems:
 #gem 'simple_enum'
