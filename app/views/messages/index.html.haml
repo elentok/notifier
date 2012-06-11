@@ -1,24 +1,32 @@
 .page-header
   %h1 Messages
 
-%ul.messages
-  - @messages.each do |message|
-    %li
-      %i.icon-envelope
-      .message-data
-        .from= message.sender
-        .title
-          = link_to message.title, message
-        .body= message.body
-      .actions
-        = link_to edit_message_path(message),
-          class: 'btn btn-mini btn-success' do
-          %i.icon-pencil.icon-white
+%table.table.table-striped.table-bordered
+  %thead
+    %th From
+    %th Title
+    %th Date
+    %th
 
-        = link_to message, 
-          :confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
-          class: 'btn btn-mini btn-danger' do
-          %i.icon-trash.icon-white
+  %tbody
+    - @messages.each do |message|
+      %tr
+        %td
+          %i.icon-envelope
+          = message.sender
+        %td
+          = link_to message.title, message
+        %td
+          = message.created_at
+        %td.actions
+          = link_to edit_message_path(message),
+            class: 'btn btn-mini btn-success' do
+            %i.icon-pencil.icon-white
+
+          = link_to message, 
+            :confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
+            class: 'btn btn-mini btn-danger' do
+            %i.icon-trash.icon-white
 
 %br
 
