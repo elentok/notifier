@@ -36,4 +36,6 @@ Notifier::Application.configure do
   config.assets.debug = true
 
   config.sass.preferred_syntax = :sass
+
+  config.middleware.insert_before(Rack::Lock, Rack::LiveReload)
 end

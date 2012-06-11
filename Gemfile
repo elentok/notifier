@@ -39,4 +39,7 @@ group :development, :test do
   # optional gems:
   #gem 'fakeweb'
   #gem 'vcr'
+  
+  gem 'rack-livereload'
+  gem 'guard-livereload'
 end
