@@ -37,5 +37,5 @@ Notifier::Application.configure do
 
   config.sass.preferred_syntax = :sass
 
-  config.middleware.insert_before(Rack::Lock, Rack::LiveReload)
+  #config.middleware.insert_before(Rack::Lock, Rack::LiveReload)
 end
