@@ -45,10 +45,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-    #debugger
     @message.sender = current_user
-
-    debugger
 
     respond_to do |format|
       if @message.save
