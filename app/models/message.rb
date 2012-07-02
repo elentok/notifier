@@ -6,6 +6,8 @@ class Message < ActiveRecord::Base
 
   attr_accessible :body, :title, :sender_id, :recipient_ids
 
+  default_scope order: 'messages.created_at DESC'
+
   def self.to_user(user_id)
     Message.includes(:recipients).where(users: { id: user_id })
   end
