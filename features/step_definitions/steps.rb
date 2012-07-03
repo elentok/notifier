@@ -28,6 +28,11 @@ Given /^the user has (\d+) messages$/ do |messages_count|
   end
 end
 
+Given /^a message with no recipients$/ do
+  Fabricate(:message)
+end
+
 Then /^I see (\d+) messages$/ do |messages_count|
   all('.message').should have(messages_count.to_i).items
 end
+
