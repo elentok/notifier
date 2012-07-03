@@ -17,7 +17,7 @@
         %td
           = link_to message.title, message
         %td
-          = message.created_at
+          = l(message.created_at)
         %td.actions
           = link_to edit_message_path(message),
             class: 'btn btn-mini btn-success' do

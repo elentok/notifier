@@ -13,7 +13,17 @@
 #= require jquery
 #= require jquery_ujs
 #= require chosen-jquery
+#= require underscore
+#= require backbone
+#= require backbone.marionette
+#= require hamlcoffee
+#= require_tree ../templates
 #= require_tree .
 
 $(document).ready ->
   $('select.chosen').chosen()
+
+Backbone.Marionette.Renderer.render = (template, data) ->
+  if (!JST[template])
+    throw "Template '#{template}' not found!"
+  JST[template](data)

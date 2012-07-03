@@ -16,7 +16,7 @@
             %li
               = link_to edit_user_registration_path do
                 %i.icon-user.icon-white
-                Signed in as #{current_user.username}
+                Signed in as #{current_user.fullname}
             %li
               = link_to 'Sign out', destroy_user_session_path, method: :delete
           - else
@@ -38,4 +38,5 @@
           #notice.alert.alert-info= notice
         - unless alert.nil?
           #alert.alert.alert-error= alert
-        = yield
+        #main
+          = yield

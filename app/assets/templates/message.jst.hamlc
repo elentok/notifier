@@ -1,0 +1,2 @@
+%li.message
+  = "From #{sender_id}"

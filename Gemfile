@@ -5,7 +5,12 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'backbone-on-rails'
+  gem 'marionette-rails'
+  gem 'haml_coffee_assets'
+  gem 'execjs'
 end
+
 gem 'jquery-rails'
 gem 'haml-bootstrap-rails'
 gem 'bootstrap-sass'
@@ -32,9 +37,11 @@ group :development, :test do
   gem 'spork'
   gem 'fabrication'
 
-  gem 'jasmine'
   gem 'jasminerice'
+  gem 'guard-jasmine'
   gem 'debugger'
+  gem 'rb-inotify'
+  gem 'libnotify'
 
   # optional gems:
   #gem 'fakeweb'
