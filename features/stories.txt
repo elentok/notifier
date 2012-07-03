@@ -1,0 +1,10 @@
+- As a user I want to see messages sent to me 
+  so I can deal with them
+- As a user I want to mark a message as read 
+  so I won't read it twice
+- As a user I want to delete a message
+  so I won't have too many messages in the inbox
+- As a user I want to be notified when I receive a message
+  so I can react to it as fast as possible
+- As an application I want to send a message to a group of users
+  so I can notify them on updates
