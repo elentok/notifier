@@ -299,6 +299,7 @@ DEPENDENCIES
   pry
   rack-livereload
   rails (= 3.2.5)
+  rb-fsevent
   rb-inotify
   rspec-rails
   rvm-capistrano

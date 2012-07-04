@@ -41,6 +41,7 @@ group :development, :test do
   gem 'guard-jasmine'
   gem 'debugger'
   gem 'rb-inotify'
+  gem 'rb-fsevent'
   gem 'libnotify'
 
   # optional gems:

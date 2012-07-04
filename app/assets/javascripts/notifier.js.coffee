@@ -8,9 +8,9 @@ Notifier.module 'Views'
 
 Notifier.addInitializer ->
   Notifier.addRegions(mainRegion: '#main')
-  controller = new Notifier.Controllers.Entries
-  new Notifier.Routers.Entries(controller: controller)
-  Backbone.history.start()
+  #controller = new Notifier.Controllers.Entries
+  #new Notifier.Routers.Entries(controller: controller)
+  #Backbone.history.start()
 
 $(document).ready ->
   Notifier.start()

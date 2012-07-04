@@ -18,6 +18,7 @@
 #= require backbone.marionette
 #= require hamlcoffee
 #= require_tree ../templates
+#= require ./notifier
 #= require_tree .
 
 $(document).ready ->
