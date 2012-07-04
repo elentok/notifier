@@ -10,7 +10,7 @@ Notifier.addInitializer ->
   Notifier.addRegions(mainRegion: '#main')
   #controller = new Notifier.Controllers.Entries
   #new Notifier.Routers.Entries(controller: controller)
-  #Backbone.history.start()
 
 $(document).ready ->
   Notifier.start()
+  Backbone.history.start(pushState: true)
