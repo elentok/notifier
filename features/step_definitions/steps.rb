@@ -9,30 +9,33 @@ Then /^I am redirected to the login page$/ do
   page.current_path.should == new_user_session_path
 end
 
-Given /^a logged\-in user$/ do
+Given /^a logged\-in user named "(.+)"$/ do |username|
   password = '123456'
-  @user = Fabricate(:user, username: 'bob', password: password)
+  @logged_in_user = Fabricate(:user, username: username, password: password)
   visit new_user_session_path
-  fill_in 'Username', with: @user.username
+  fill_in 'Username', with: username
   fill_in 'Password', with: password
-  find_field('Username').value.should == @user.username
-  find_field('Password').value.should == password
   click_button 'Sign in'
   page.should have_content('Signed in successfully.')
 end
 
-Given /^the user has (\d+) messages$/ do |messages_count|
-  @messages = []
-  messages_count.to_i.times do
-    @messages << Fabricate(:message, recipients: [@user])
-  end
+Given /^a user named "(.+)"$/ do |username|
+  @user = Fabricate :user, username: username
 end
 
-Given /^a message with no recipients$/ do
-  Fabricate(:message)
+Given /^the following messages:$/ do |messages_table|
+  create_messages_from_table(messages_table)
+end
+
+Then /^I see the following messages:$/ do |messages_table|
+  actual = all('.message').map do |message|
+    { 'title' => message.find('.title').text.strip }
+  end
+
+  actual.should == messages_table.hashes
 end
 
 Then /^I see (\d+) messages$/ do |messages_count|
-  all('.message').should have(messages_count.to_i).items
+  all('.message').should have(messages_count.to_i).messages
 end
 

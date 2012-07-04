@@ -55,4 +55,5 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'launchy' # required in order to use 'save_and_open_page'
 end
