@@ -22,7 +22,6 @@ Feature: View messages
       | message #1 |
       | message #2 |
 
-  @bob
   Scenario: user sees the messages sorted by their creation date
     Given a logged-in user named "bob"
     And the following messages:
