@@ -12,7 +12,7 @@ class Notifier.Controllers.Messages
 
   index: ->
     view = new Notifier.Views.Messages(collection: @collection)
-    Notifier.mainRegion.show()
+    Notifier.mainRegion.show(view)
 
 
 

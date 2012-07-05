@@ -45,13 +45,11 @@ describe "Notifier.Controllers.Messages", ->
       expect(Notifier.Views.Messages).
         toHaveBeenCalledWith(collection: @controller.collection)
 
-    xit "shows the view in the main region", ->
-      #view = 'view-stub'
-      #spyOn(Notifier.Views, 'Messages').andReturn
+    it "shows the view in the main region", ->
+      spyOn(Notifier.Views, 'Messages')
       @controller.index()
-      expect(Notifier.mainRegion.show).toHaveBeenCalled()
-      expect(Notifier.mainRegion.show.mostRecentCall.args[0] instanceof
-        Notifier.Views.Messages).toBeTruthy("show() wasn't called with the view")
+      view = Notifier.Views.Messages.mostRecentCall.object
+      expect(Notifier.mainRegion.show).toHaveBeenCalledWith(view)
 
 
 
