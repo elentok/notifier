@@ -6,6 +6,7 @@ describe MessagesController do
                            password_confirmation: '123456') }
 
   before :each do
+    controller.stub(:authenticate_user!).and_return true
     controller.stub(:current_user).and_return(user)
   end
 
