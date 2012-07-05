@@ -9,6 +9,7 @@ group :assets do
   gem 'marionette-rails'
   gem 'haml_coffee_assets'
   gem 'execjs'
+  gem 'momentjs-rails'
 end
 
 gem 'jquery-rails'
@@ -38,6 +39,8 @@ group :development, :test do
   gem 'fabrication'
 
   gem 'jasminerice'
+  gem 'sinon-rails'
+  gem 'jasmine-sinon-rails'
   gem 'guard-jasmine'
   gem 'debugger'
   gem 'rb-inotify'

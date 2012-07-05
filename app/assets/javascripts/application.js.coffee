@@ -17,6 +17,7 @@
 #= require backbone
 #= require backbone.marionette
 #= require hamlcoffee
+#= require moment
 #= require_tree ../templates
 #= require ./notifier
 #= require_tree .

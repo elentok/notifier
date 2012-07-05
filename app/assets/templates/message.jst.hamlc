@@ -2,7 +2,7 @@
   %i.icon-envelope
   = @sender_id
 %td.title= @title
-%td= @created_at
+%td= moment(@created_at).fromNow()
 %td.actions
 -#%td.actions
   -#= link_to edit_message_path(message),

@@ -18,5 +18,13 @@ describe "Notifier.Views.Messages", ->
     expect(message_elements.length).toEqual collection.length
 
 
+describe "Notifier.Views.MessageItem", ->
+  it "renders the date as a fuzzy date (3 days ago)", ->
+    date = new Date()
+    date.setDate(date.getDate() - 3)
+    model = new Backbone.Model(created_at: date)
+    view = new Notifier.Views.MessageItem(model: model)
+    view.render()
+    expect($(view.el)).toHaveText(/3 days ago/)
 
 
