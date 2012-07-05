@@ -3,36 +3,36 @@
 
 #main{data: { messages: @messages.to_json } }
 
-%table.table.table-striped.table-bordered
-  %thead
-    %th From
-    %th Title
-    %th Date
-    %th
+-#%table.table.table-striped.table-bordered
+  -#%thead
+    -#%th From
+    -#%th Title
+    -#%th Date
+    -#%th
 
-  %tbody
-    - @messages.each do |message|
-      %tr.message
-        %td
-          %i.icon-envelope
-          = message.sender
-        %td.title
-          = link_to message.title, message
-        %td
-          = l(message.created_at)
-        %td.actions
-          = link_to edit_message_path(message),
-            class: 'btn btn-mini btn-success' do
-            %i.icon-pencil.icon-white
+  -#%tbody
+    -#- @messages.each do |message|
+      -#%tr.message
+        -#%td
+          -#%i.icon-envelope
+          -#= message.sender
+        -#%td.title
+          -#= link_to message.title, message
+        -#%td
+          -#= l(message.created_at)
+        -#%td.actions
+          -#= link_to edit_message_path(message),
+            -#class: 'btn btn-mini btn-success' do
+            -#%i.icon-pencil.icon-white
 
-          = link_to message, 
-            :confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
-            class: 'btn btn-mini btn-danger' do
-            %i.icon-trash.icon-white
+          -#= link_to message, 
+            -#:confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
+            -#class: 'btn btn-mini btn-danger' do
+            -#%i.icon-trash.icon-white
 
-%br
+-#%br
 
-= link_to new_message_path, class: 'btn btn-success' do
-  %i.icon-plus.icon-white
-  = t(:new_message)
+-#= link_to new_message_path, class: 'btn btn-success' do
+  -#%i.icon-plus.icon-white
+  -#= t(:new_message)
 

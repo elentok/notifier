@@ -1,17 +1,15 @@
--#%li.message
-  -#= "From #{sender_id}"
-%tr.message
-  %td
-    %i.icon-envelope
-    = sender_id
-  %td.title= title
-  %td= created_at
-  -#%td.actions
-    -#= link_to edit_message_path(message),
-      -#class: 'btn btn-mini btn-success' do
-      -#%i.icon-pencil.icon-white
+%td
+  %i.icon-envelope
+  = @sender_id
+%td.title= @title
+%td= @created_at
+%td.actions
+-#%td.actions
+  -#= link_to edit_message_path(message),
+    -#class: 'btn btn-mini btn-success' do
+    -#%i.icon-pencil.icon-white
 
-    -#= link_to message, 
-      -#:confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
-      -#class: 'btn btn-mini btn-danger' do
-      -#%i.icon-trash.icon-white
+  -#= link_to message, 
+    -#:confirm => t(:are_you_sure, default: "Are you sure?"), :method => :delete,
+    -#class: 'btn btn-mini btn-danger' do
+    -#%i.icon-trash.icon-white

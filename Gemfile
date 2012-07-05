@@ -5,7 +5,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'backbone-on-rails'
+  gem 'backbone-on-rails', git: 'https://github.com/meleyal/backbone-on-rails'
   gem 'marionette-rails'
   gem 'haml_coffee_assets'
   gem 'execjs'

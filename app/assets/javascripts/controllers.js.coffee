@@ -6,8 +6,10 @@ class Notifier.Controllers.Messages
   constructor: ->
     @collection = new Notifier.Collections.Messages
     main = $('#main')
+    window.data = main.data('messages')
     messages = main.data('messages')
     @collection.reset(messages)
+    window.col = @collection
     main.removeData('messages')
 
   index: ->
