@@ -8,6 +8,7 @@ Feature: View messages
     When I visit the messages page
     Then I am redirected to the login page
 
+  @javascript
   Scenario: user sees a list of his messages
     Given a logged-in user named "bob"
     And a user named "joe"
@@ -22,6 +23,7 @@ Feature: View messages
       | message #1 |
       | message #2 |
 
+  @javascript
   Scenario: user sees the messages sorted by their creation date
     Given a logged-in user named "bob"
     And the following messages:
